@@ -1,7 +1,7 @@
 
 %define realname   String-Escape
 %define version    2002.001
-%define release    %mkrel 4
+%define release    %mkrel 5
 
 Name:       perl-%{realname}
 Version:    %{version}
