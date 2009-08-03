@@ -1,21 +1,18 @@
+%define upstream_name    String-Escape
+%define upstream_version 2002.001
 
-%define realname   String-Escape
-%define version    2002.001
-%define release    %mkrel 5
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Registry of string functions, including backslash escapes
-Source:     http://www.cpan.org/modules/by-module/String/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
-
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/String/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides a flexible calling interface to some
@@ -32,10 +29,8 @@ to a list of functions to be applied in order. Other modules may also
 register their functions here for later general use. (See the "CALLING
 BY NAME" section below for more.)
 
-
-
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -56,6 +51,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
-
