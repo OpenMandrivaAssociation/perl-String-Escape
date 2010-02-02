@@ -1,9 +1,9 @@
 %define upstream_name    String-Escape
-%define upstream_version 2002.001
+%define upstream_version 2010.002
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Registry of string functions, including backslash escapes
 License:    GPL+ or Artistic
