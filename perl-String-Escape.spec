@@ -1,15 +1,13 @@
 %define upstream_name    String-Escape
-%define upstream_version 2010.002
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	2010.002
+Release:	7
 
 Summary:	Registry of string functions, including backslash escapes
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/String-Escape
-Source0:	https://cpan.metacpan.org/authors/id/E/EV/EVO/String-Escape-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/EV/EVO/String-Escape-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -31,7 +29,7 @@ register their functions here for later general use. (See the "CALLING
 BY NAME" section below for more.)
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -63,9 +61,7 @@ make test
 - rebuild
 
   + Jérôme Quelin <jquelin@mandriva.org>
-    - rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 2002.001-5mdv2009.0
+    - rebuild using %2010.002 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 2002.001-5mdv2009.0
 + Revision: 258391
 - rebuild
 
